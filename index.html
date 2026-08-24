@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENOMA</title>
+    <link rel="icon" href="/img/logo.jpg" type="image/png">
+    
+    <style>
+        /* --- Reset Básico e Fontes --- */
+        :root {
+            --cor-fundo-geral: #F9F7F1; /* Bege claro da imagem */
+            --cor-primaria: #2A384F; /* Azul escuro/cinza azulado da imagem */
+            --cor-secundaria: #A18C5D; /* Castanho/dourado da imagem para destaques */
+            --cor-texto: #2A384F; /* Texto principal azul escuro */
+            --cor-texto-secundario: #A18C5D; /* Castanho/dourado para texto secundário */
+            --cor-branco: #fff;
+            --cor-cinza-claro: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo-geral); /* Fundo geral bege */
+        }
+
+        /* --- Utilidades --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--cor-primaria); /* Títulos em azul escuro */
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-secundaria); /* Botões em castanho/dourado */
+            color: var(--cor-branco);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #8a784d; /* Tom ligeiramente mais escuro do castanho */
+        }
+
+        /* --- 1. Cabeçalho e Navegação --- */
+        .navbar {
+            background-color: var(--cor-fundo-geral); /* Navbar com fundo bege */
+            color: var(--cor-primaria);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra mais subtil */
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--cor-primaria);
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: var(--cor-primaria);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* --- Menu Hambúrguer (Mobile) --- */
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--cor-primaria);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* --- 2. Secção Hero (Destaque) --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Alinha o texto à esquerda */
+            text-align: left;
+            height: 80vh;
+            min-height: 400px;
+            margin-top: 60px; /* Altura da navbar */
+            color: var(--cor-primaria); /* Texto em azul escuro */
+            background-color: var(--cor-fundo-geral); /* Fundo bege */
+            padding-left: 2rem; /* Espaçamento da imagem */
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1200px; /* Ligeiramente mais largo para a imagem */
+            padding: 0; /* Remove padding extra para a imagem ocupar a lateral */
+        }
+
+        .hero-conteudo {
+            flex: 1;
+            max-width: 50%; /* Limita a largura do texto */
+        }
+
+        .hero-logo-imagem {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; /* Alinha a imagem à direita */
+            align-items: center;
+            height: 100%; /* Ocupa a altura total da secção hero */
+        }
+
+        .hero-logo-imagem img {
+            width: 100%; /* Ajusta a largura da imagem para o flex container */
+            max-width: 500px; /* Limite máximo para a imagem */
+            height: auto;
+            object-fit: contain; /* Garante que a imagem cabe sem cortar */
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--cor-primaria); /* Título em azul escuro */
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--cor-primaria); /* Padrão, mas pode ser mais claro */
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background-color: var(--cor-secundaria); /* Cor do badge "GENOMA" */
+            color: var(--cor-branco);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero .sub-titulo-data {
+            color: var(--cor-texto-secundario); /* Cor do "Setembro de 2025" */
+            font-size: 1.1rem;
+            margin-top: -1rem; /* Aproxima do título */
+            margin-bottom: 2rem;
+        }
+
+        /* --- 3. Secção Sobre Nós --- */
+        #sobre {
+            background-color: var(--cor-branco); /* Fundo branco para contraste */
+            color: var(--cor-texto);
+        }
+        #sobre .container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        #sobre .sobre-texto, #sobre .sobre-img {
+            flex: 1;
+        }
+        #sobre .sobre-img img {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* --- 4. Secção Próximos Eventos --- */
+        #eventos {
+            background-color: var(--cor-fundo-geral); /* Fundo bege */
+        }
+
+        .eventos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card-evento {
+            background-color: var(--cor-branco); /* Cartões brancos */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-evento:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+
+        .card-evento img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-evento-conteudo {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-evento-data {
+            font-size: 0.9rem;
+            color: var(--cor-secundaria); /* Data em castanho/dourado */
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-evento-conteudo h3 {
+            font-size: 1.3rem;
+            color: var(--cor-primaria); /* Título do evento em azul escuro */
+        }
+
+        .card-evento-footer {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* --- 5. Secção CTA (Como Ajudar) --- */
+        #ajudar {
+            background-color: var(--cor-primaria); /* Fundo azul escuro */
+            color: var(--cor-branco);
+            text-align: center;
+        }
+        #ajudar h2 {
+            color: var(--cor-branco); /* Título em branco */
+        }
+        #ajudar p {
+            max-width: 600px;
+            margin: 1rem auto 2rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- 6. Rodapé --- */
+        footer {
+            background-color: var(--cor-texto); /* Rodapé em azul escuro */
+            color: #ccc;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--cor-branco); /* Ícones sociais em branco */
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* --- Elementos de Rodapé Inferior (Confidential, Copyright) --- */
+        .bottom-footer-details {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1); /* Linha divisória */
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .bottom-footer-details span {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            padding: 0.3rem 0.8rem;
+            margin: 0 0.5rem;
+        }
+
+
+        /* --- RESPONSIVIDADE (Media Queries) --- */
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                align-items: center;
+                text-align: center;
+                padding-left: 0;
+                height: auto; /* Altura flexível no mobile */
+            }
+            .hero .container {
+                flex-direction: column; /* Pilha os elementos */
+                align-items: center;
+                padding: 0 1.5rem;
+            }
+            .hero-conteudo {
+                max-width: 100%;
+                order: 2; /* Move o conteúdo para baixo */
+            }
+            .hero-logo-imagem {
+                order: 1; /* Move a imagem para cima */
+                margin-bottom: 2rem;
+                justify-content: center;
+            }
+            .hero-logo-imagem img {
+                max-width: 300px; /* Reduz o tamanho da imagem no mobile */
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            /* --- Navbar Mobile --- */
+            .navbar .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: var(--cor-fundo-geral); /* Fundo bege */
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                
+                transform: translateY(-120%);
+                transition: transform 0.3s ease-out;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            /* --- Outras Secções --- */
+            #sobre .container {
+                flex-direction: column;
+            }
+            #sobre .sobre-img {
+                margin-top: 2rem;
+            }
+
+            .eventos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-footer-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">GENOMA</a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#ajudar">Como Ajudar</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div class="container">
+                <div class="hero-conteudo">
+                    <span class="badge">GENOMA</span>
+                    <h1>Auto dos Reis Magos de Figueira</h1>
+                    <p>Um Festival de Inverno para Celebrar a Tradição e o Futuro</p>
+                    <p class="sub-titulo-data">10 e 11 de Janeiro de 2026</p>
+                    <a href="#eventos" class="btn">Saber Mais</a>
+                </div>
+                <div class="hero-logo-imagem">
+                    <img src="img/logo_auto.png" alt="Logo Auto dos Reis Magos">
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <div class="sobre-texto">
+                    <h2>A Nossa Missão</h2>
+                    <p>Somos uma associação sem fins lucrativos dedicada a fortalecer os laços da nossa comunidade através de eventos culturais, sociais e educativos. Acreditamos no poder da união para criar um futuro melhor para todos.</p>
+                    <p>Desde 2017, temos vindo a organizar workshops, feiras, encontros e muito mais, sempre com o apoio dos nossos incríveis voluntários.</p>
+                </div>
+                <div class="sobre-img">
+                    <img src="img/figueira1.jpg" alt="figueira">
+                </div>
+            </div>
+        </section>
+
+        <section id="eventos">
+            <div class="container">
+                <h2>Eventos</h2>
+                
+                <div class="eventos-grid">
+                    
+                    <article class="card-evento">
+                        <img src="img/trilho_lendas1.png" alt="Banner do Evento 1">
+                        <div class="card-evento-conteudo">
+                            <div class="card-evento-data">7 de JUNHO, 2026 | 09:00</div>
+                            <h3>Trilho Das Lendas</h3>
+                            <p>No dia 7 de junho, a Associação GENOMA convida-te a calçar as botas e a descobrir o coração de Figueira. Uma viagem de 12,4 km entre moinhos ancestrais e paisagens únicas.</p>
+                        </div>
+                        <div class="card-evento-footer">
+                            <a href="eventos/trilho.html" class="btn">Saber Mais</a>
+                        </div>
+                    </article>
+
+                    <article class="card-evento">
+                        <img src="img/auto_reis1.jpg" alt="Banner do Evento 2">
+                        <div class="card-evento-conteudo">
+                            <div class="card-evento-data">10 e 11 de JANEIRO, 2026 | 10:00</div>
+                            <h3>Auto dos Reis Magos de Figueira</h3>
+                            <p>O Auto volta em 2026! Um festival cultural comunitário. Uma tradição secular. Um abrigo no inverno.</p>
+                        </div>
+                        <div class="card-evento-footer">
+                            <a href="eventos/autoreis.html" class="btn">Saber Mais</a>
+                        </div>
+                    </article>
+
+                    <article class="card-evento">
+                        <img src="img/marcado1.jpg" alt="Banner do Evento 3">
+                        <div class="card-evento-conteudo">
+                            <div class="card-evento-data">10 e 11 de JANEIRO, 2026 | 10:00</div>
+                            <h3>Mercado Real</h3>
+                            <p>O Real Mercado do Auto dos Reis Magos. Procuramos mãos que fazem e sabores da terra: do enfeite ao comer… tudo o que o inverno pede e a tradição guarda.</p>
+                        </div>
+                        <div class="card-evento-footer">
+                            <a href="eventos/mercadoreal.html" class="btn">Inscreva-se</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="ajudar">
+            <div class="container">
+                <h2>Faça Parte dos Reis</h2>
+                <p>A sua ajuda é fundamental. Seja através de voluntariado no terreno, partilhando as suas ideias ou com um donativo, toda a contribuição faz a diferença.</p>
+                <a href="#" class="btn">Quero Ser Voluntário</a>
+            </div>
+        </section>
+    </main>
+    <footer id="contactos">
+        <div class="container">
+            <h3>GENOMA</h3>
+            <p>Figueira - Penafiel</p>
+            <p>Email: genoma.figueira@gmail.com</p>
+            
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/profile.php?id=61576109920726&locale=pt_PT" aria-label="Facebook">Facebook</a></li> 
+                <li><a href="https://www.instagram.com/genoma.associacao/" aria-label="Instagram">Instagram</a></li>
+            </ul>
+
+        </div>
+        <div class="bottom-footer-details">
+            <div>
+                <span>Confidential</span>
+            </div>
+            <div>
+                <p>&copy; 2025 GENOMA. Todos os direitos reservados.</p>
+            </div>
+            <div>
+                <span>Copyright ©</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Seleciona os elementos do DOM
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Adiciona o 'escutador' de evento de clique ao hambúrguer
+        burger.addEventListener('click', () => {
+            // Alterna a classe 'active' no menu
+            navLinks.classList.toggle('active');
+            
+            // Alterna a classe 'toggle' no hambúrguer (para animar o X)
+            burger.classList.toggle('toggle');
+        });
+    </script>
+
+</body>
+</html>
