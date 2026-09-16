@@ -145,55 +145,38 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* Alinha o texto à esquerda */
+            align-items: flex-start;
             text-align: left;
             height: 80vh;
-            min-height: 400px;
-            margin-top: 60px; /* Altura da navbar */
-            color: var(--cor-primaria); /* Texto em azul escuro */
-            background-color: var(--cor-fundo-geral); /* Fundo bege */
-            padding-left: 2rem; /* Espaçamento da imagem */
+            min-height: 520px;
+            margin-top: 60px;
+            color: var(--cor-branco);
+            background:
+                linear-gradient(90deg, rgba(12, 10, 9, 0.88) 0%, rgba(12, 10, 9, 0.62) 48%, rgba(12, 10, 9, 0.22) 100%),
+                url("img/hero-auto-reis-2027.jpg") center 38% / cover no-repeat;
         }
 
         .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            max-width: 1200px; /* Ligeiramente mais largo para a imagem */
-            padding: 0; /* Remove padding extra para a imagem ocupar a lateral */
+            width: 100%;
+            max-width: 1200px;
         }
 
         .hero-conteudo {
-            flex: 1;
-            max-width: 50%; /* Limita a largura do texto */
-        }
-
-        .hero-logo-imagem {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end; /* Alinha a imagem à direita */
-            align-items: center;
-            height: 100%; /* Ocupa a altura total da secção hero */
-        }
-
-        .hero-logo-imagem img {
-            width: 100%; /* Ajusta a largura da imagem para o flex container */
-            max-width: 500px; /* Limite máximo para a imagem */
-            height: auto;
-            object-fit: contain; /* Garante que a imagem cabe sem cortar */
+            max-width: 620px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            color: var(--cor-primaria); /* Título em azul escuro */
+            color: var(--cor-branco);
+            text-shadow: 0 2px 14px rgba(0,0,0,0.45);
         }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            color: var(--cor-primaria); /* Padrão, mas pode ser mais claro */
+            color: var(--cor-branco);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.45);
         }
 
         .hero .badge {
@@ -362,25 +345,17 @@
             .hero {
                 align-items: center;
                 text-align: center;
-                padding-left: 0;
-                height: auto; /* Altura flexível no mobile */
+                height: auto;
+                min-height: 620px;
+                background:
+                    linear-gradient(rgba(12, 10, 9, 0.6), rgba(12, 10, 9, 0.78)),
+                    url("img/hero-auto-reis-2027.jpg") center 38% / cover no-repeat;
             }
             .hero .container {
-                flex-direction: column; /* Pilha os elementos */
-                align-items: center;
                 padding: 0 1.5rem;
             }
             .hero-conteudo {
                 max-width: 100%;
-                order: 2; /* Move o conteúdo para baixo */
-            }
-            .hero-logo-imagem {
-                order: 1; /* Move a imagem para cima */
-                margin-bottom: 2rem;
-                justify-content: center;
-            }
-            .hero-logo-imagem img {
-                max-width: 300px; /* Reduz o tamanho da imagem no mobile */
             }
 
             .hero h1 {
@@ -481,13 +456,10 @@
             <div class="container">
                 <div class="hero-conteudo">
                     <span class="badge">GENOMA</span>
-                    <h1>Auto dos Reis Magos de Figueira</h1>
+                    <h1>Auto dos Reis Magos 2027</h1>
                     <p>Um Festival de Inverno para Celebrar a Tradição e o Futuro</p>
-                    <p class="sub-titulo-data">10 e 11 de Janeiro de 2026</p>
+                    <p class="sub-titulo-data">9 e 10 de janeiro de 2027</p>
                     <a href="#eventos" class="btn">Saber Mais</a>
-                </div>
-                <div class="hero-logo-imagem">
-                    <img src="img/logo_auto.png" alt="Logo Auto dos Reis Magos">
                 </div>
             </div>
         </section>
@@ -524,11 +496,11 @@
                     </article>
 
                     <article class="card-evento">
-                        <img src="img/auto_reis1.jpg" alt="Banner do Evento 2">
+                        <img src="img/auto_reis1.jpg" alt="Auto dos Reis Magos de Figueira">
                         <div class="card-evento-conteudo">
-                            <div class="card-evento-data">10 e 11 de JANEIRO, 2026 | 10:00</div>
-                            <h3>Auto dos Reis Magos de Figueira</h3>
-                            <p>O Auto volta em 2026! Um festival cultural comunitário. Uma tradição secular. Um abrigo no inverno.</p>
+                            <div class="card-evento-data">9 e 10 de JANEIRO, 2027</div>
+                            <h3>Auto dos Reis Magos 2027</h3>
+                            <p>O Auto volta nos dias 9 e 10 de janeiro de 2027. Guarde as datas — o programa e os horários serão anunciados brevemente.</p>
                         </div>
                         <div class="card-evento-footer">
                             <a href="eventos/autoreis.html" class="btn">Saber Mais</a>
@@ -563,7 +535,7 @@
         <div class="container">
             <h3>GENOMA</h3>
             <p>Figueira - Penafiel</p>
-            <p>Email: genoma.figueira@gmail.com</p>
+            <p>Email: geral@associacaogenoma.pt</p>
             
             <ul class="social-links">
                 <li><a href="https://www.facebook.com/profile.php?id=61576109920726&locale=pt_PT" aria-label="Facebook">Facebook</a></li> 
@@ -576,7 +548,7 @@
                 <span>Confidential</span>
             </div>
             <div>
-                <p>&copy; 2025 GENOMA. Todos os direitos reservados.</p>
+                <p>&copy; 2026 GENOMA. Todos os direitos reservados.</p>
             </div>
             <div>
                 <span>Copyright ©</span>
