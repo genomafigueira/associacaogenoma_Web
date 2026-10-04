@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Auto dos Reis Magos 2027 | GENOMA</title>
+    <title>Auto dos Reis Magos 2027 — Figueira, Penafiel | GENOMA</title>
+    <meta name="description" content="De 8 a 10 de janeiro de 2027, em Figueira, Penafiel. Entrada gratuita. Consulte as informações do evento e acompanhe os anúncios do programa.">
+    <link rel="canonical" href="https://www.associacaogenoma.pt/eventos/autoreis.html">
+    <meta property="og:title" content="Auto dos Reis Magos 2027 — Figueira, Penafiel | GENOMA">
+    <meta property="og:description" content="De 8 a 10 de janeiro de 2027, em Figueira, Penafiel. Entrada gratuita. Consulte as informações do evento e acompanhe os anúncios do programa.">
+    <meta property="og:image" content="https://www.associacaogenoma.pt/img/auto_reis1.jpg">
+    <meta property="og:image:alt" content="Participantes vestidos como os Reis Magos durante o Auto de Figueira">
+    <meta property="og:url" content="https://www.associacaogenoma.pt/eventos/autoreis.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Auto dos Reis Magos 2027 — Figueira, Penafiel | GENOMA">
+    <meta name="twitter:description" content="De 8 a 10 de janeiro de 2027, em Figueira, Penafiel. Entrada gratuita. Consulte as informações do evento e acompanhe os anúncios do programa.">
+    <meta name="twitter:image" content="https://www.associacaogenoma.pt/img/auto_reis1.jpg">
+    <meta name="twitter:image:alt" content="Participantes vestidos como os Reis Magos durante o Auto de Figueira">
     
     <style>
         /* --- Reset Básico e Fontes --- */
@@ -40,6 +53,11 @@
 
         section {
             padding: 4rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        footer[id] {
+            scroll-margin-top: 80px;
         }
 
         h1, h2, h3 {
@@ -126,8 +144,11 @@
             cursor: pointer;
             flex-direction: column;
             gap: 5px;
+            border: 0;
+            padding: 0.5rem;
+            background: transparent;
         }
-        .burger div {
+        .burger span {
             width: 25px;
             height: 3px;
             background-color: var(--cor-primaria);
@@ -142,6 +163,24 @@
             padding: 3rem 0;
             text-align: center;
         }
+        footer h3 { color: var(--cor-branco); }
+        .event-main a, .info-box a {
+            color: var(--cor-primaria);
+            font-weight: 600;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
+        .event-main a:hover, .info-box a:hover {
+            color: #715f36;
+        }
+        .social-groups {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .social-groups h4 { color: var(--cor-branco); margin-bottom: 0.5rem; }
         .social-links {
             list-style: none;
             display: flex;
@@ -149,6 +188,17 @@
             gap: 1.5rem;
             margin-bottom: 1rem;
         }
+
+        .auto-social {
+            margin: 1.5rem 0 2rem;
+            padding: 1.25rem;
+            background: var(--cor-fundo-geral);
+            border-left: 4px solid var(--cor-secundaria);
+            border-radius: 6px;
+        }
+        .auto-social h3 { margin-bottom: 0.4rem; }
+        .auto-social p { margin-bottom: 0.75rem; }
+        .auto-social a { margin-right: 1rem; font-weight: 600; }
         .social-links a {
             color: var(--cor-branco);
             font-size: 1.5rem;
@@ -196,11 +246,14 @@
         }
         
         .event-header .data-badge {
-            font-size: 1rem;
-            font-weight: bold;
-            color: var(--cor-texto-secundario);
-            margin-top: -1rem;
-            display: block;
+            display: inline-block;
+            margin-top: -0.5rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.65);
+            color: var(--cor-primaria);
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         /* --- Conteúdo Principal (2 colunas) --- */
@@ -217,13 +270,30 @@
         /* Coluna da Esquerda (Principal) */
         .event-main {
             flex: 2; /* Ocupa 2/3 da largura */
+            order: 1;
         }
 
         .event-main .event-banner-image {
             width: 100%;
-            height: auto;
+            height: 420px;
+            object-fit: cover;
+            object-position: center 55%;
             border-radius: 8px;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-credit {
+            margin: 0 0 2rem;
+            color: #6b6b6b;
+            font-size: 0.85rem;
+        }
+
+        .event-photo-secondary {
+            margin: 2rem 0 0.5rem;
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 8px;
         }
         
         .event-main h2 {
@@ -234,6 +304,7 @@
         /* Coluna da Direita (Sidebar) */
         .event-sidebar {
             flex: 1; /* Ocupa 1/3 da largura */
+            order: 2;
             position: sticky; /* Fica fixa ao fazer scroll */
             top: 100px; /* 60px da navbar + 40px de espaço */
             align-self: flex-start; /* Alinha ao topo */
@@ -270,6 +341,25 @@
             width: 100%;
             text-align: center;
             margin-top: 1rem;
+        }
+
+        .visit-info {
+            margin-top: 2rem;
+            padding: 1.25rem 1.5rem;
+            background-color: var(--cor-fundo-geral);
+            border: 1px solid #e5e0d5;
+            border-radius: 8px;
+        }
+
+        .visit-info h2 {
+            text-align: left;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .visit-info p {
+            margin: 0.35rem 0 0;
+            color: var(--cor-texto-secundario);
         }
         
         /* Placeholder do Mapa */
@@ -308,9 +398,13 @@
                 padding: 1rem 0;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
                 transform: translateY(-120%);
-                transition: transform 0.3s ease-out;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, visibility 0.3s;
             }
-            .nav-links.active { transform: translateY(0); }
+            .nav-links.active {
+                transform: translateY(0);
+                visibility: visible;
+            }
             .nav-links li { margin: 0.5rem 0; }
             .burger { display: flex; }
             .burger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
@@ -333,33 +427,45 @@
                 position: static; /* Sidebar deixa de ser fixa */
                 top: auto;
                 width: 100%;
+                order: -1;
+            }
+
+            .event-main {
+                order: 0;
             }
 
             .event-header {
                 padding-top: 80px;
                 text-align: center;
             }
+
+            .event-main .event-banner-image {
+                height: 340px;
+                object-position: center 55%;
+            }
         }
 
     </style>
+    <link rel="stylesheet" href="/css/navigation.css">
 </head>
 <body>
 
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="index.html" class="logo">GENOMA</a> <ul class="nav-links">
+                <a href="/index.html" class="logo">GENOMA</a>
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="/index.html#inicio">Início</a></li>
-                    <li><a href="/index.html#sobre">Sobre Nós</a></li>
                     <li><a href="/index.html#eventos">Eventos</a></li>
-                    <li><a href="/index.html#ajudar">Como Ajudar</a></li>
+                    <li><a href="/index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="/index.html#participar">Participe</a></li>
                     <li><a href="/index.html#contactos">Contactos</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+                <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -369,7 +475,7 @@
         <section class="event-header">
             <div class="container">
                 <h1>Auto dos Reis Magos 2027</h1>
-                <span class="data-badge">9 e 10 de JANEIRO, 2027</span>
+                <span class="data-badge">8, 9 e 10 de janeiro de 2027 · Figueira, Penafiel</span>
             </div>
         </section>
 
@@ -377,14 +483,28 @@
             <div class="container event-layout">
 
                 <div class="event-main">
-                    <img src="/img/auto_reis1.jpg" alt="Auto dos Reis Magos de Figueira" class="event-banner-image">
-                    
-                    <h2>O Auto volta em 2027!</h2>
-                    <p>Nos dias 9 e 10 de janeiro de 2027, voltamos a reunir-nos em Figueira para celebrar a magia dos Reis e uma tradição que atravessa gerações.</p>
-                    <p>Um festival cultural comunitário. Uma tradição secular. Um abrigo no inverno.</p>
-                    <p>Guarde as datas e venha celebrar connosco. O programa e os horários serão divulgados brevemente.</p>
+                    <img src="/img/CA.AUTO_RMAGOS111.jpg" alt="Auto dos Reis Magos celebrado em Figueira" class="event-banner-image">
+                    <p class="photo-credit">Fotografia: Associação GENOMA.</p>
 
-                    <h3>Programa brevemente</h3>
+                    <h2>O que é o Auto dos Reis Magos?</h2>
+                    <p>O Auto dos Reis Magos é uma representação da história dos Reis Magos, feita pela comunidade de Figueira. A representação começa no Souto e percorre a aldeia, com várias paragens, até ao Largo da Igreja. O percurso demora cerca de duas horas.</p>
+
+                    <h2>O festival</h2>
+                    <p>A representação é o centro de um festival de inverno que convida a descobrir a aldeia e a reunir-se em torno desta tradição. A GENOMA organiza o festival, que decorre por toda a aldeia, com o Largo da Igreja entre os seus pontos principais.</p>
+
+                    <h2>Programa</h2>
+                    <p>O programa ainda não foi publicado. Será partilhado aqui quando estiver confirmado.</p>
+
+                    <h2>Planear a visita</h2>
+                    <p>Tem alguma questão sobre a visita? Contacte <a href="mailto:geral@associacaogenoma.pt">geral@associacaogenoma.pt</a>.</p>
+
+                    <div class="auto-social" aria-label="Redes sociais do Auto dos Reis Magos">
+                        <h3>Acompanhe as novidades do festival</h3>
+                        <p>Siga o Auto dos Reis Magos nas redes sociais para atualizações.</p>
+                        <a href="https://www.instagram.com/autoreismagos/" target="_blank" rel="noopener noreferrer">Instagram do Auto</a>
+                        <a href="https://www.facebook.com/autodosreismagos" target="_blank" rel="noopener noreferrer">Facebook do Auto</a>
+                    </div>
+
                 </div>
 
                 <aside class="event-sidebar">
@@ -392,10 +512,12 @@
                     <div class="info-box">
                         <h3>Detalhes</h3>
                         <ul>
-                            <li><strong>Data:</strong> 9 e 10 de janeiro de 2027</li>
-                            <li><strong>Horários:</strong> A anunciar</li>
-                            <li><strong>Programa:</strong> A anunciar</li>
-                            <li><strong>Organizador:</strong> GENOMA</li>
+                            <li><strong>Datas:</strong> 8, 9 e 10 de janeiro de 2027</li>
+                            <li><strong>Entrada:</strong> Gratuita</li>
+                            <li><strong>Local:</strong> Por toda a aldeia de Figueira, Penafiel. O Largo da Igreja é um dos pontos principais.</li>
+                            <li><strong>Mapa:</strong> <a href="https://maps.app.goo.gl/rPTRkaawqWvwsjEE6" target="_blank" rel="noopener noreferrer">Largo da Igreja no Google Maps</a> (ponto de referência; não indica o início da representação).</li>
+                            <li><strong>Programa e datas das representações:</strong> A anunciar</li>
+                            <li><strong>Organização:</strong> GENOMA</li>
                         </ul>
                     </div>
 
@@ -412,40 +534,31 @@
             <p>Figueira - Penafiel</p>
             <p>Email: geral@associacaogenoma.pt</p>
             
-            <ul class="social-links">
-                <li><a href="https://www.facebook.com/profile.php?id=61576109920726&locale=pt_PT" aria-label="Facebook">Facebook</a></li> 
-                <li><a href="https://www.instagram.com/genoma.associacao/" aria-label="Instagram">Instagram</a></li>
-            </ul>
+            <div class="social-groups">
+                <div>
+                    <h4>GENOMA — atividades ao longo do ano</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/associacao.genoma/" aria-label="Instagram da GENOMA" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61576109920726" aria-label="Facebook da GENOMA" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Auto dos Reis Magos — novidades do festival</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/autoreismagos/" aria-label="Instagram do Auto dos Reis Magos" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/autodosreismagos" aria-label="Facebook do Auto dos Reis Magos" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
         <div class="bottom-footer-details">
-            <div>
-                <span>Confidential</span>
-            </div>
-            <div>
-                <p>&copy; 2026 GENOMA. Todos os direitos reservados.</p>
-            </div>
-            <div>
-                <span>Copyright ©</span>
-            </div>
+            <p>&copy; 2026 GENOMA. Todos os direitos reservados.</p>
         </div>
     </footer>
 
 
-    <script>
-        // Seleciona os elementos do DOM
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-
-        // Adiciona o 'escutador' de evento de clique ao hambúrguer
-        burger.addEventListener('click', () => {
-            // Alterna a classe 'active' no menu
-            navLinks.classList.toggle('active');
-            
-            // Alterna a classe 'toggle' no hambúrguer (para animar o X)
-            burger.classList.toggle('toggle');
-        });
-    </script>
+    <script src="/js/navigation.js" defer></script>
 
 </body>
 </html>

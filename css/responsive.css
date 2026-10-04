@@ -1,0 +1,120 @@
+/* --- RESPONSIVIDADE (Media Queries) --- */
+
+        @media (max-width: 768px) {
+            section {
+                padding: 2.5rem 0;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .eventos-grid {
+                gap: 1.25rem;
+                margin-top: 1.25rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                align-items: center;
+                text-align: center;
+                height: auto;
+                min-height: 540px;
+                background:
+                    linear-gradient(rgba(12, 10, 9, 0.6), rgba(12, 10, 9, 0.78)),
+                    url("../img/hero-auto-reis-2027.jpg") center 38% / cover no-repeat;
+            }
+            .hero .container {
+                padding: 0 1.5rem;
+            }
+            .hero-conteudo {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            /* --- Navbar Mobile --- */
+            .navbar .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: var(--cor-fundo-geral); /* Fundo bege */
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                
+                transform: translateY(-120%);
+                visibility: hidden;
+                transition: transform 0.3s ease-out, visibility 0.3s;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                visibility: visible;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            /* --- Outras Secções --- */
+            #sobre .container {
+                flex-direction: column;
+            }
+            #sobre .sobre-img {
+                margin-top: 1rem;
+            }
+
+            .eventos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .participation-section {
+                padding: 2.5rem 0;
+            }
+
+            .participation-options {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .participation-card {
+                text-align: center;
+                align-items: center;
+                padding: 1.25rem;
+            }
+
+            .bottom-footer-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }

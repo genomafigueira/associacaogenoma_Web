@@ -1,0 +1,263 @@
+/* --- 2. Secção Hero (Destaque) --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            height: 80vh;
+            min-height: 520px;
+            margin-top: 60px;
+            color: var(--cor-branco);
+            background:
+                linear-gradient(90deg, rgba(12, 10, 9, 0.88) 0%, rgba(12, 10, 9, 0.62) 48%, rgba(12, 10, 9, 0.22) 100%),
+                url("../img/hero-auto-reis-2027.jpg") center 38% / cover no-repeat;
+        }
+
+        .hero .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .hero-conteudo {
+            max-width: 620px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--cor-branco);
+            text-shadow: 0 2px 14px rgba(0,0,0,0.45);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--cor-branco);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background-color: var(--cor-secundaria); /* Cor do badge "GENOMA" */
+            color: var(--cor-branco);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero .sub-titulo-data {
+            color: var(--cor-branco);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- 3. Secção Sobre Nós --- */
+        #sobre {
+            background-color: var(--cor-branco); /* Fundo branco para contraste */
+            color: var(--cor-texto);
+        }
+        #sobre .container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        #sobre .sobre-texto, #sobre .sobre-img {
+            flex: 1;
+        }
+        #sobre .sobre-img img {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* --- 4. Secção Próximos Eventos --- */
+        #eventos {
+            background-color: var(--cor-fundo-geral); /* Fundo bege */
+        }
+
+        #eventos h2 {
+            margin-bottom: 2rem;
+        }
+
+        #eventos h3.section-label {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 0;
+        }
+
+        #eventos-anteriores .past-events {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(42, 56, 79, 0.18);
+        }
+
+        #eventos-anteriores .past-events .card-evento {
+            opacity: 0.88;
+        }
+
+        .eventos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card-evento {
+            background-color: var(--cor-branco); /* Cartões brancos */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-evento:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+
+        .card-evento img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-evento-conteudo {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-evento-data {
+            font-size: 0.9rem;
+            color: var(--cor-secundaria); /* Data em castanho/dourado */
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-evento-conteudo h3 {
+            font-size: 1.3rem;
+            color: var(--cor-primaria); /* Título do evento em azul escuro */
+        }
+
+        .card-evento-footer {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* Participation pathways */
+        .participation-section {
+            padding: 3rem 0;
+            background: var(--cor-primaria);
+            color: var(--cor-branco);
+            text-align: center;
+        }
+
+        .participation-section h2 {
+            color: var(--cor-branco);
+            margin-bottom: 1.5rem;
+        }
+
+        .participation-options {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+            text-align: left;
+        }
+
+        .participation-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: var(--cor-branco);
+            color: var(--cor-texto);
+        }
+
+        .participation-card h3 {
+            font-size: 1.25rem;
+        }
+
+        .participation-card p {
+            flex-grow: 1;
+            margin-bottom: 1.25rem;
+        }
+
+        .participation-contact {
+            margin: 1.25rem 0 0;
+        }
+
+        .participation-contact a {
+            color: var(--cor-branco);
+        }
+
+        /* --- 6. Rodapé --- */
+        footer {
+            background-color: var(--cor-texto); /* Rodapé em azul escuro */
+            color: #ccc;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer .container > h3 {
+            color: #fff;
+        }
+
+        .social-groups {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .social-groups h4 {
+            color: var(--cor-branco);
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--cor-branco); /* Ícones sociais em branco */
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* --- Elementos de Rodapé Inferior (Confidential, Copyright) --- */
+        .bottom-footer-details {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1); /* Linha divisória */
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .bottom-footer-details span {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            padding: 0.3rem 0.8rem;
+            margin: 0 0.5rem;
+        }

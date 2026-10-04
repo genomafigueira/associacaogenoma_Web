@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>GENOMA</title>
+    <title>Trilho das Lendas 2026 | GENOMA</title>
+    <meta name="description" content="Recorde o Trilho das Lendas, realizado em Figueira a 7 de junho de 2026: um percurso de 12,4 km entre património natural e cultural.">
+    <link rel="canonical" href="https://www.associacaogenoma.pt/eventos/trilho.html">
+    <meta property="og:title" content="Trilho das Lendas 2026 | GENOMA">
+    <meta property="og:description" content="Recorde o Trilho das Lendas, realizado em Figueira a 7 de junho de 2026: um percurso de 12,4 km entre património natural e cultural.">
+    <meta property="og:image" content="https://www.associacaogenoma.pt/img/trilho_lendas3.png">
+    <meta property="og:image:alt" content="Paisagem do percurso do Trilho das Lendas em Figueira">
+    <meta property="og:url" content="https://www.associacaogenoma.pt/eventos/trilho.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trilho das Lendas 2026 | GENOMA">
+    <meta name="twitter:description" content="Recorde o Trilho das Lendas, realizado em Figueira a 7 de junho de 2026: um percurso de 12,4 km entre património natural e cultural.">
+    <meta name="twitter:image" content="https://www.associacaogenoma.pt/img/trilho_lendas3.png">
+    <meta name="twitter:image:alt" content="Paisagem do percurso do Trilho das Lendas em Figueira">
     
     <style>
         /* --- Reset Básico e Fontes --- */
@@ -126,8 +139,11 @@
             cursor: pointer;
             flex-direction: column;
             gap: 5px;
+            border: 0;
+            padding: 0.5rem;
+            background: transparent;
         }
-        .burger div {
+        .burger span {
             width: 25px;
             height: 3px;
             background-color: var(--cor-primaria);
@@ -142,6 +158,15 @@
             padding: 3rem 0;
             text-align: center;
         }
+        footer h3, .social-groups h4 { color: var(--cor-branco); }
+        .social-groups {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .social-groups h4 { margin-bottom: 0.5rem; }
         .social-links {
             list-style: none;
             display: flex;
@@ -308,9 +333,13 @@
                 padding: 1rem 0;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
                 transform: translateY(-120%);
-                transition: transform 0.3s ease-out;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, visibility 0.3s;
             }
-            .nav-links.active { transform: translateY(0); }
+            .nav-links.active {
+                transform: translateY(0);
+                visibility: visible;
+            }
             .nav-links li { margin: 0.5rem 0; }
             .burger { display: flex; }
             .burger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
@@ -342,24 +371,26 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/css/navigation.css">
 </head>
 <body>
 
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="index.html" class="logo">GENOMA</a> <ul class="nav-links">
+                <a href="/index.html" class="logo">GENOMA</a>
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="/index.html#inicio">Início</a></li>
-                    <li><a href="/index.html#sobre">Sobre Nós</a></li>
                     <li><a href="/index.html#eventos">Eventos</a></li>
-                    <li><a href="/index.html#ajudar">Como Ajudar</a></li>
+                    <li><a href="/index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="/index.html#participar">Participe</a></li>
                     <li><a href="/index.html#contactos">Contactos</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+                <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -368,8 +399,8 @@
 
         <section class="event-header">
             <div class="container">
-                <h1>Trilho Das Lendas</h1>
-                <span class="data-badge">7 de JUNHO, 2026 | 09:00</span>
+                <h1>Trilho das Lendas</h1>
+                <span class="data-badge">Evento realizado · 7 de junho de 2026</span>
             </div>
         </section>
 
@@ -377,15 +408,17 @@
             <div class="container event-layout">
 
                 <div class="event-main">
-                    <img src="../img/trilho_lendas3.png" alt="Banner do Trilho Das Lendas" class="event-banner-image">
+                    <img src="../img/trilho_lendas3.png" alt="Paisagem do Trilho das Lendas em Figueira" class="event-banner-image">
 
-                    <h2>Sobre o Evento</h2>
-                    <p>No dia 7 de junho, a Associação GENOMA convida-te a calçar as botas e a descobrir o coração de Figueira. O Trilho das Lendas não é apenas uma caminhada; é uma viagem de 12,4 km pela nossa identidade, entre moinhos ancestrais e paisagens que parecem saídas de um conto.</p>
-                    <p>O percurso envolve trilhos irregulares e desnível moderado, por isso traz calçado adequado e muita energia! Não é recomendado para pessoas com mobilidade reduzida.</p>
-                    <p>Não deixes a tua vaga para trás. Garante o teu lugar e vem escrever esta história connosco. Vamos juntos preservar o património e celebrar a natureza!</p>
-                    <p><strong>Inscrições até 31 de Maio!</strong></p>
+                    <h2>Sobre o evento</h2>
+                    <p>Realizado a 7 de junho de 2026, o Trilho das Lendas percorreu 12,4 km em Figueira, entre moinhos ancestrais e paisagens locais. A iniciativa convidou os participantes a conhecer o património natural e cultural da freguesia.</p>
+                    <div class="eventos-grid" aria-label="Fotografias do Trilho das Lendas">
+                        <img src="../img/trilho_lendas1.png" alt="Trilho das Lendas — fotografia 1">
+                        <img src="../img/trilho_lendas2.jpg" alt="Trilho das Lendas — fotografia 2">
+                        <img src="../img/trilho_lendas3.png" alt="Trilho das Lendas — fotografia 3">
+                    </div>
 
-                    <h3>Agenda</h3>
+                    <h3>Agenda da edição de 2026</h3>
                     <ul>
                         <li><strong>08:00 – 08:45</strong> - Check-in e Levantamento KIT</li>
                         <li><strong>09:00</strong> - Partida do Trilho das Lendas</li>
@@ -395,7 +428,7 @@
                 <aside class="event-sidebar">
 
                     <div class="info-box">
-                        <h3>Detalhes</h3>
+                        <h3>Informações da edição de 2026</h3>
                         <ul>
                             <li><strong>Data:</strong> 7 de Junho, 2026</li>
                             <li><strong>Check-in:</strong> 08:00 – 08:45</li>
@@ -405,7 +438,6 @@
                             <li><strong>Preço:</strong> 10€ (inclui T-shirt, água e fruta – pago no local)</li>
                             <li><strong>Organizador:</strong> GENOMA</li>
                         </ul>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfu7r-OaZWdrVhxDOqEK_hZyB_57Wbp2EAbCz9nzntKaomLNQ/viewform" target="_blank" class="btn btn-full">Inscrever-me</a>
                     </div>
                     
                     <div class="info-box">
@@ -429,40 +461,31 @@
             <p>Figueira - Penafiel</p>
             <p>Email: geral@associacaogenoma.pt</p>
             
-            <ul class="social-links">
-                <li><a href="https://www.facebook.com/profile.php?id=61576109920726&locale=pt_PT" aria-label="Facebook">Facebook</a></li> 
-                <li><a href="https://www.instagram.com/genoma.associacao/" aria-label="Instagram">Instagram</a></li>
-            </ul>
+            <div class="social-groups">
+                <div>
+                    <h4>GENOMA — atividades ao longo do ano</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/associacao.genoma/" aria-label="Instagram da GENOMA" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61576109920726" aria-label="Facebook da GENOMA" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Auto dos Reis Magos — novidades do festival</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/autoreismagos/" aria-label="Instagram do Auto dos Reis Magos" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/autodosreismagos" aria-label="Facebook do Auto dos Reis Magos" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
         <div class="bottom-footer-details">
-            <div>
-                <span>Confidential</span>
-            </div>
-            <div>
-                <p>&copy; 2026 GENOMA. Todos os direitos reservados.</p>
-            </div>
-            <div>
-                <span>Copyright ©</span>
-            </div>
+            <p>&copy; 2026 GENOMA. Todos os direitos reservados.</p>
         </div>
     </footer>
 
 
-    <script>
-        // Seleciona os elementos do DOM
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-
-        // Adiciona o 'escutador' de evento de clique ao hambúrguer
-        burger.addEventListener('click', () => {
-            // Alterna a classe 'active' no menu
-            navLinks.classList.toggle('active');
-            
-            // Alterna a classe 'toggle' no hambúrguer (para animar o X)
-            burger.classList.toggle('toggle');
-        });
-    </script>
+    <script src="/js/navigation.js" defer></script>
 
 </body>
 </html>

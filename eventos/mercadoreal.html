@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>GENOMA</title>
+    <title>Real Mercado 2026 | GENOMA</title>
+    <meta name="description" content="Recorde o Real Mercado, realizado em Figueira a 10 e 11 de janeiro de 2026, integrado na celebração do Auto dos Reis Magos.">
+    <link rel="canonical" href="https://www.associacaogenoma.pt/eventos/mercadoreal.html">
+    <meta property="og:title" content="Real Mercado 2026 | GENOMA">
+    <meta property="og:description" content="Recorde o Real Mercado, realizado em Figueira a 10 e 11 de janeiro de 2026, integrado na celebração do Auto dos Reis Magos.">
+    <meta property="og:image" content="https://www.associacaogenoma.pt/img/marcado1.jpg">
+    <meta property="og:image:alt" content="Bancas e visitantes no Real Mercado de Figueira ao anoitecer">
+    <meta property="og:url" content="https://www.associacaogenoma.pt/eventos/mercadoreal.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Real Mercado 2026 | GENOMA">
+    <meta name="twitter:description" content="Recorde o Real Mercado, realizado em Figueira a 10 e 11 de janeiro de 2026, integrado na celebração do Auto dos Reis Magos.">
+    <meta name="twitter:image" content="https://www.associacaogenoma.pt/img/marcado1.jpg">
+    <meta name="twitter:image:alt" content="Bancas e visitantes no Real Mercado de Figueira ao anoitecer">
     
     <style>
         /* --- Reset Básico e Fontes --- */
@@ -126,8 +139,11 @@
             cursor: pointer;
             flex-direction: column;
             gap: 5px;
+            border: 0;
+            padding: 0.5rem;
+            background: transparent;
         }
-        .burger div {
+        .burger span {
             width: 25px;
             height: 3px;
             background-color: var(--cor-primaria);
@@ -142,6 +158,15 @@
             padding: 3rem 0;
             text-align: center;
         }
+        footer h3, .social-groups h4 { color: var(--cor-branco); }
+        .social-groups {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .social-groups h4 { margin-bottom: 0.5rem; }
         .social-links {
             list-style: none;
             display: flex;
@@ -308,9 +333,13 @@
                 padding: 1rem 0;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
                 transform: translateY(-120%);
-                transition: transform 0.3s ease-out;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, visibility 0.3s;
             }
-            .nav-links.active { transform: translateY(0); }
+            .nav-links.active {
+                transform: translateY(0);
+                visibility: visible;
+            }
             .nav-links li { margin: 0.5rem 0; }
             .burger { display: flex; }
             .burger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
@@ -342,24 +371,26 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/css/navigation.css">
 </head>
 <body>
 
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="index.html" class="logo">GENOMA</a> <ul class="nav-links">
+                <a href="/index.html" class="logo">GENOMA</a>
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="/index.html#inicio">Início</a></li>
-                    <li><a href="/index.html#sobre">Sobre Nós</a></li>
                     <li><a href="/index.html#eventos">Eventos</a></li>
-                    <li><a href="/index.html#ajudar">Como Ajudar</a></li>
+                    <li><a href="/index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="/index.html#participar">Participe</a></li>
                     <li><a href="/index.html#contactos">Contactos</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+                <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -369,7 +400,7 @@
         <section class="event-header">
             <div class="container">
                 <h1>Real Mercado</h1>
-                <span class="data-badge">10 e 11 de JANEIRO, 2026 | 10:00</span>
+                <span class="data-badge">Evento realizado · 10 e 11 de janeiro de 2026</span>
             </div>
         </section>
 
@@ -377,16 +408,12 @@
             <div class="container event-layout">
 
                 <div class="event-main">
-                    <img src="/img/mercado2.png" alt="Banner do Marcado" class="event-banner-image">
+                    <img src="/img/mercado2.png" alt="Real Mercado do Auto dos Reis Magos" class="event-banner-image">
                     
-                    <h2>Chamamento real para artesanato e sabor.</h2>
-                    <p>Nos dias 10 e 11 de janeiro, a freguesia de Figueira volta a erguer o Real Mercado do Auto dos Reis Magos. Procuramos mãos que fazem e sabores da terra: do enfeite ao comer… tudo o que o inverno pede e a tradição guarda.
+                    <h2>Sobre o evento</h2>
+                    <p>O Real Mercado realizou-se em Figueira a 10 e 11 de janeiro de 2026, integrado na celebração do Auto dos Reis Magos. O mercado reuniu artesanato e produtos da terra.</p>
 
-                    Juntem-se a nós e façam parte desta nossa bonita celebração.</p>
-                    
-                    <p> Candidaturas até 15 de dezembro (vagas limitadas). </p>
-
-                    <h3>Regulamento e Inscrição</h3>
+                    <h3>Regulamento da edição de 2026</h3>
                     <ul style="margin-left: 20px; margin-bottom: 1.5rem;">
                         
                         <li style="margin-bottom: 10px;">
@@ -395,15 +422,8 @@
                             </a>
                         </li>
                         
-                        <li>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq-eJWiUggQJMizBduslciRRxc3tDCaMkd-dRO91W9HRTj4g/viewform" target="_blank" rel="noopener noreferrer">
-                                Aceder ao Formulário de Inscrição
-                            </a>
-                        </li>
-
                     </ul>
 
-                    <p>- Dúvidas: genoma.educa@gmail.com • João Rocha 916 577 789 </p>
                     
                     </div>
 
@@ -413,12 +433,11 @@
                         <h3>Detalhes</h3>
                         <ul>
                             <li><strong>Data:</strong> 10 e 11 de JANEIRO, 2026</li>
-                            <li><strong>Hora:</strong> 10:00 - 24:00</li>
+                            <li><strong>Horário da edição de 2026:</strong> 10:00–24:00</li>
                             <li><strong>Local:</strong> Largo da Igreja</li>
                             <li><strong>Preço:</strong> Entrada Gratuita</li>
                             <li><strong>Organizador:</strong> GENOMA</li>
                         </ul>
-                        <a href="#" class="btn btn-full">Adicionar ao Calendário</a>
                     </div>
                     
                     <div class="info-box">
@@ -442,40 +461,31 @@
             <p>Figueira - Penafiel</p>
             <p>Email: geral@associacaogenoma.pt</p>
             
-            <ul class="social-links">
-                <li><a href="https://www.facebook.com/profile.php?id=61576109920726&locale=pt_PT" aria-label="Facebook">Facebook</a></li> 
-                <li><a href="https://www.instagram.com/genoma.associacao/" aria-label="Instagram">Instagram</a></li>
-            </ul>
+            <div class="social-groups">
+                <div>
+                    <h4>GENOMA — atividades ao longo do ano</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/associacao.genoma/" aria-label="Instagram da GENOMA" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61576109920726" aria-label="Facebook da GENOMA" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Auto dos Reis Magos — novidades do festival</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/autoreismagos/" aria-label="Instagram do Auto dos Reis Magos" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/autodosreismagos" aria-label="Facebook do Auto dos Reis Magos" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
         <div class="bottom-footer-details">
-            <div>
-                <span>Confidential</span>
-            </div>
-            <div>
-                <p>© 2026 GENOMA. Todos os direitos reservados.</p>
-            </div>
-            <div>
-                <span>Copyright ©</span>
-            </div>
+            <p>© 2026 GENOMA. Todos os direitos reservados.</p>
         </div>
     </footer>
 
 
-    <script>
-        // Seleciona os elementos do DOM
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-
-        // Adiciona o 'escutador' de evento de clique ao hambúrguer
-        burger.addEventListener('click', () => {
-            // Alterna a classe 'active' no menu
-            navLinks.classList.toggle('active');
-            
-            // Alterna a classe 'toggle' no hambúrguer (para animar o X)
-            burger.classList.toggle('toggle');
-        });
-    </script>
+    <script src="/js/navigation.js" defer></script>
 
 </body>
 </html>
